@@ -10,7 +10,6 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Setup SQLite DB
 engine = create_engine('sqlite:///cases.db')
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
