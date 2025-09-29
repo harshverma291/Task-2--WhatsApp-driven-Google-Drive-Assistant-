@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><title>Case Details</title></head>
+<body>
+  <h1>Case Details</h1>
+  <p><b>Parties:</b> {{ details.parties }}</p>
+  <p><b>Filing Date:</b> {{ details.filing_date }}</p>
+  <p><b>Next Hearing Date:</b> {{ details.next_hearing }}</p>
+  <p><b>Status:</b> {{ details.status }}</p>
+
+  {% if pdf_url %}
+    <a href="{{ url_for('download_pdf') }}?url={{ pdf_url }}">Download Judgment PDF</a>
+  {% else %}
+    <p>No judgment PDF available.</p>
+  {% endif %}
+
+  <p><a href="{{ url_for('home') }}">Search another case</a></p>
+</body>
+</html>
