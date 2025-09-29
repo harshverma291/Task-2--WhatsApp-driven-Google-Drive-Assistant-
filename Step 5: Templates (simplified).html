@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><title>Case Fetcher</title></head>
+<body>
+  <h1>Enter Case Details</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+      {% for msg in messages %}
+        <li style="color:red;">{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="post">
+    Case Type: <input type="text" name="case_type"><br>
+    Case Number: <input type="text" name="case_number"><br>
+    Year: <input type="text" name="year"><br>
+    <input type="submit" value="Fetch">
+  </form>
+</body>
+</html>
